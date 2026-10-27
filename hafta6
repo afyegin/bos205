@@ -1,0 +1,12 @@
+# Örnek1
+import cv2
+import numpy as np
+
+img = cv2.imread("belge.jpg")
+h, w = img.shape[:2]
+
+# 130 px sağa, 70 px aşağı
+M = np.float32([[1, 0, 130], [0, 1, 70]])
+
+kaymis = cv2.warpAffine(img, M, (w, h))
+cv2.imwrite("kaymis.jpg", kaymis)
