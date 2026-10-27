@@ -45,5 +45,14 @@ M = cv2.getRotationMatrix2D(merkez, 34, 1.0)
 donmus = cv2.warpAffine(img, M, (w, h))
 cv2.imshow("donmus", donmus)
 cv2.waitKey(0)
-
+----------------------------------------------
+img = cv2.imread("belge.jpg")
+yatay = cv2.flip(img, 1)   # sağ-sol
+dikey = cv2.flip(img, 0)   # yukarı-aşağı
+ikisi = cv2.flip(img, -1)  # ikisi birden
+ust  = np.hstack([img, yatay])
+alt  = np.hstack([dikey, ikisi])
+tablo = np.vstack([ust, alt])
+cv2.imshow("tablo",tablo)
+cv2.waitKey(0)
 
