@@ -34,5 +34,16 @@ for ad, yontem in [("komsu",    cv2.INTER_NEAREST),
           cv2.imshow(ad , buyuk)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+------------------------------------------------
+
+import cv2
+img = cv2.imread("belge.jpg")
+h, w = img.shape[:2]
+merkez = (w // 2, h // 2)
+# 34 derece, saat yönünün tersine
+M = cv2.getRotationMatrix2D(merkez, 34, 1.0)
+donmus = cv2.warpAffine(img, M, (w, h))
+cv2.imshow("donmus", donmus)
+cv2.waitKey(0)
 
 
