@@ -24,3 +24,15 @@ modlar = [("sabit",   cv2.BORDER_CONSTANT),
 for ad, mod in modlar:
     cikti = cv2.warpAffine(img, M, (w, h), borderMode=mod)
     cv2.imwrite(ad + ".jpg", cikti)
+-----------------------------------------------
+
+#Ornek 3
+for ad, yontem in [("komsu",    cv2.INTER_NEAREST),
+                   ("bilinear", cv2.INTER_LINEAR),
+                   ("bikubik",  cv2.INTER_CUBIC)]:
+buyuk = cv2.resize(parca, None, fx=6, fy=6, interpolation=yontem)
+cv2.imshow(ad , buyuk)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
