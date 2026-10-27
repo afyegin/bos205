@@ -10,3 +10,17 @@ M = np.float32([[1, 0, 130], [0, 1, 70]])
 
 kaymis = cv2.warpAffine(img, M, (w, h))
 cv2.imwrite("kaymis.jpg", kaymis)
+
+----------------------------------------------
+
+#Örnek2
+
+M = np.float32([[1, 0, 90], [0, 1, 55]])
+modlar = [("sabit",   cv2.BORDER_CONSTANT),
+          ("kopyala", cv2.BORDER_REPLICATE),
+          ("yansit",  cv2.BORDER_REFLECT),
+          ("sar",     cv2.BORDER_WRAP)]
+
+for ad, mod in modlar:
+    cikti = cv2.warpAffine(img, M, (w, h), borderMode=mod)
+    cv2.imwrite(ad + ".jpg", cikti)
