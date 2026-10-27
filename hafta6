@@ -30,8 +30,8 @@ for ad, mod in modlar:
 for ad, yontem in [("komsu",    cv2.INTER_NEAREST),
                    ("bilinear", cv2.INTER_LINEAR),
                    ("bikubik",  cv2.INTER_CUBIC)]:
-buyuk = cv2.resize(parca, None, fx=6, fy=6, interpolation=yontem)
-cv2.imshow(ad , buyuk)
+          buyuk = cv2.resize(parca, None, fx=6, fy=6, interpolation=yontem)
+          cv2.imshow(ad , buyuk)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
